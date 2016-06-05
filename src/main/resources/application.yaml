@@ -1,0 +1,30 @@
+zuul:
+  routes:
+    publicId:
+      path: /publicId/**
+      serviceId: PublicIdService
+      strip-prefix: false
+    fieldDefinition:
+      path:  /map/*/pointdefinition/*/fielddefinition/**
+      serviceId: FieldDefinitionService
+      strip-prefix: false
+    pointDefinition:
+      path: /map/*/pointdefinition/**
+      serviceId: PointDefinitionService
+      strip-prefix: false
+    map:
+      path: /map/**
+      serviceId: MapService
+      strip-prefix: false
+    fieldType:
+      path: /fieldtype/**
+      serviceId: FieldDefinitionService
+      prefix: /api
+      strip-prefix: false
+spring:
+  application:
+    name: RoutingServer
+eureka:
+  client:
+    service-url:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
