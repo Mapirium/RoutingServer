@@ -12,6 +12,10 @@ zuul:
       path: /map/*/pointdefinition/**
       serviceId: PointDefinitionService
       strip-prefix: false
+    pointData:
+      path: /map/*/point/**
+      serviceId: PointDataService
+      strip-prefix: false
     map:
       path: /map/**
       serviceId: MapService
